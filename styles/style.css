@@ -20,7 +20,6 @@ button {
   color: white;
   border-radius: 4px;
   cursor: pointer;
-  margin: 1rem 1rem 0 0;
 }
 
 button:hover {
@@ -38,4 +37,3 @@ button.alt:hover {
   background-color: rgb(230, 201, 252);
   border-color: transparent;
 }
-
