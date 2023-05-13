@@ -63,3 +63,16 @@
   color: rgb(47, 4, 82);
   margin: 0.5rem 0;
 }
+
+.error label {
+  color: rgb(136, 2, 2);
+}
+
+.error p {
+  color: rgb(136, 2, 2);
+}
+.error input {
+  border-color: rgb(136, 2, 2);
+  color: rgb(136, 2, 2);
+  background-color: rgb(253, 219, 219);
+}
