@@ -9,7 +9,7 @@ function closePlayerConfig() {
   backdropElement.style.display = "none";
 
   formElement.firstElementChild.classList.remove("error");
-  errorsOutputElement.textContent = "";
+  errorsOutputConfigElement.textContent = "";
   formElement.reset()
 }
 
@@ -20,7 +20,7 @@ function savePlayerConfig(event) {
 
   if (!enteredPlayername) {
     event.target.firstElementChild.classList.add("error");
-    errorsOutputElement.textContent = "Please enter a valid name!";
+    errorsOutputConfigElement.textContent = "Please enter a valid name!";
     return;
   }
 
