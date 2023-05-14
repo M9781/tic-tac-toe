@@ -9,6 +9,25 @@ function startNewGame() {
   activePlayerNameElement.textContent = players[activePlayer].name;
 }
 
+function resetGameStatus() {
+  activePlayer = 0;
+  editedPlayer = 0;
+  activePlayer = 0;
+  currentRound = 1;
+
+  for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < 3; j++) {
+      gameData[i][j] = 0;
+      document.querySelectorAll("#game-board li").textContent = "";
+      document.querySelectorAll("#game-board li").classList.remove("disabled");
+    }
+  }
+
+  gameOverElement.firstElementChild.innerHTML =
+    "<h2>You won, <span id='winner-name'>PLAYER NAME</span>!</h2>";
+  gameOverElement.style.display = "none";
+}
+
 function checkForGameOver() {
   //checking rows for equality
   for (let i = 0; i < 3; i++) {
@@ -82,18 +101,20 @@ function selectGameField(event) {
   gameData[selectedRow][selectedColumn] = activePlayer + 1;
 
   const winnerId = checkForGameOver();
-  endGame(winnerId);
-  currentRound++
+
+  if (winnerId != 0) {
+    endGame(winnerId);
+  }
+
+  currentRound++;
   switchPlayer();
 }
 
 function endGame(winnerId) {
   gameOverElement.style.display = "block";
   if (winnerId > 0) {
-    winnerNameElement.textContent = players[winnerId].name;
-  } else if (winnerId < 0) {
-    gameOverElement.firstElementChild.textContent = "It's a tie!";
+    winnerNameElement.textContent = players[winnerId - 1].name;
   } else {
-    return;
+    gameOverElement.firstElementChild.textContent = "It's a tie!";
   }
 }
