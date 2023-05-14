@@ -28,6 +28,7 @@ function startNewGame() {
     return;
   }
   resetGameStatus();
+  gameAreaElement.scrollIntoView()
   activePlayerNameElement.textContent = players[activePlayer].name;
 }
 
@@ -116,6 +117,7 @@ function selectGameField(event) {
 function endGame(winnerId) {
   isGameOver = true;
   gameOverElement.style.display = "block";
+  gameOverElement.scrollIntoView()
   if (winnerId > 0) {
     const winnerName = players[winnerId - 1].name;
     gameOverElement.firstElementChild.firstElementChild.textContent =
