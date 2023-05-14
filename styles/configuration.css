@@ -35,6 +35,7 @@
   margin: 0;
   padding: 0;
   display: flex;
+ justify-content: center;
 }
 
 #game-configuration li {
@@ -75,4 +76,10 @@
   border-color: rgb(136, 2, 2);
   color: rgb(136, 2, 2);
   background-color: rgb(253, 219, 219);
+}
+
+@media (max-width: 48rem) {
+  #game-configuration ol {
+    flex-wrap: wrap;
+  }
 }
