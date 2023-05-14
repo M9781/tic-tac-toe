@@ -1,7 +1,8 @@
 let editedPlayer = 0;
 let activePlayer = 0;
+let currentRound = 1;
 
-const gameData = [
+let gameData = [
   [0, 0, 0],
   [0, 0, 0],
   [0, 0, 0],
@@ -19,6 +20,8 @@ const errorsOutputConfigElement = document.getElementById("config-errors");
 const errorsOutputPlayersElement = document.getElementById("players-errors");
 const gameAreaElement = document.getElementById("active-game");
 const activePlayerNameElement = document.getElementById("active-player-name");
+const gameOverElement = document.getElementById("game-over");
+const winnerNameElement = document.getElementById("winner-name");
 
 const editPlayer1BtnElement = document.getElementById("edit-player-1-btn");
 const editPlayer2BtnElement = document.getElementById("edit-player-2-btn");
