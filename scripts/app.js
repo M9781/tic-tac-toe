@@ -1,6 +1,7 @@
 let editedPlayer = 0;
 let activePlayer = 0;
 let currentRound = 1;
+let isGameOver = false;
 
 let gameData = [
   [0, 0, 0],
@@ -16,6 +17,7 @@ const players = [
 const playerConfigOverlayElement = document.getElementById("config-overlay");
 const backdropElement = document.getElementById("backdrop");
 const formElement = document.querySelector("form");
+const playernameInputElement = document.getElementById("playername")
 const errorsOutputConfigElement = document.getElementById("config-errors");
 const errorsOutputPlayersElement = document.getElementById("players-errors");
 const gameAreaElement = document.getElementById("active-game");

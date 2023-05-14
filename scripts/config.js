@@ -2,6 +2,8 @@ function openPlayerConfig(event) {
   editedPlayer = +event.target.dataset.playerid;
   playerConfigOverlayElement.style.display = "block";
   backdropElement.style.display = "block";
+  playernameInputElement.focus();
+  playernameInputElement.select();
 }
 
 function closePlayerConfig() {
@@ -10,7 +12,7 @@ function closePlayerConfig() {
 
   formElement.firstElementChild.classList.remove("error");
   errorsOutputConfigElement.textContent = "";
-  formElement.reset()
+  formElement.reset();
 }
 
 function savePlayerConfig(event) {
@@ -28,7 +30,7 @@ function savePlayerConfig(event) {
     "player-" + editedPlayer + "-data"
   );
   updatedPlayerDataElement.querySelector("h3").textContent = enteredPlayername;
-  players[editedPlayer-1].name = enteredPlayername
+  players[editedPlayer - 1].name = enteredPlayername;
 
   closePlayerConfig();
 }
