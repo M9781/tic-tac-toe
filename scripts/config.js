@@ -1,4 +1,5 @@
-function openPlayerConfig() {
+function openPlayerConfig(event) {
+  editedPlayer = +event.target.dataset.playerid;
   playerConfigOverlayElement.style.display = "block";
   backdropElement.style.display = "block";
 }
@@ -7,8 +8,9 @@ function closePlayerConfig() {
   playerConfigOverlayElement.style.display = "none";
   backdropElement.style.display = "none";
 
-  formElement.firstElememtChild.classList.remove("error");
+  formElement.firstElementChild.classList.remove("error");
   errorsOutputElement.textContent = "";
+  formElement.reset()
 }
 
 function savePlayerConfig(event) {
@@ -22,6 +24,11 @@ function savePlayerConfig(event) {
     return;
   }
 
-  playerConfigOverlayElement.style.display = "none";
-  backdropElement.style.display = "none";
+  const updatedPlayerDataElement = document.getElementById(
+    "player-" + editedPlayer + "-data"
+  );
+  updatedPlayerDataElement.querySelector("h3").textContent = enteredPlayername;
+  players[editedPlayer-1].name = enteredPlayername
+
+  closePlayerConfig();
 }
